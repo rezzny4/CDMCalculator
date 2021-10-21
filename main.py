@@ -572,6 +572,7 @@ class Ui_MainWindow(object):
                     self.dic[i] = set()
             Arr = list(self.dic.keys())
             self.zapros.setText("Enter the set "+ Arr[self.i]+ ", using coma")
+            self.En.setEnabled(False)
     def GO(self): 
         Arr = list(self.dic.keys())
         self.dic[Arr[self.i]] = set(self.vvod.text().split(","))
@@ -592,6 +593,7 @@ class Ui_MainWindow(object):
         self.vvod.setText("")
         self.U.clear()
         self.equal.setEnabled(False)
+        self.En.setEnabled(True)
     def CalcSet(self):
         print(self.dic)
         pr = {"~": 3, "∩": 2, "∪": 1, "-": 0}
@@ -752,8 +754,9 @@ class Ui_MainWindow(object):
         self.equal_2.setEnabled(False)
         self.Val0.setEnabled(False)
         self.Val1.setEnabled(False)
+        self.En2.setEnabled(True)
     def Entrance2(self):
-        if self.formula2 != "":
+        if self.stroka_2.text() != "":
             self.i2 = 0
             self.formula2 = self.stroka_2.text()
             for i in self.formula2:
@@ -763,6 +766,7 @@ class Ui_MainWindow(object):
             self.zapros_2.setText("Enter the variable " + Arr[self.i2])
             self.Val0.setEnabled(True)
             self.Val1.setEnabled(True)
+            self.En2.setEnabled(False)
     def val1(self):
         Arr = list(self.dic2.keys())
         self.i2 += 1
@@ -907,6 +911,7 @@ class Ui_MainWindow(object):
         self.equal_2.setEnabled(False)
         self.Val0.setEnabled(False)
         self.Val1.setEnabled(False)
+        self.En2.setEnabled(True)
     
 
     formula = ""
